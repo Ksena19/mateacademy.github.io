@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <title>Random quote generator</title>
+
+   <style type="text/css">
+     *{
+      padding: 0;
+      margin: 0;
+      font-family: 'Signika', sans-serif;
+     }
+     .container {
+      text-align: center;
+      padding-top: 100px;
+      background: url('img/img-1.jpg') center center no-repeat; 
+      width: 100%;
+      height: 650px;
+      background-size: cover;
+      color: #fff;
+     }
+    
+     .container h1 {
+      font-size: 40px;
+     }
+
+     #random{
+      margin-top: 60px;
+      font-size: 25px;
+     }
+
+     #target{
+      margin-top: 50px;
+     }
+
+   </style>
+   
+   </head>
+   <body>
+     <div class="container">
+        <h1>Random quote generator</h1>
+          <p id="random">“The Way Get Started Is To Quit Talking And Begin Doing.” -Walt Disney</p>
+            <p><a class="btn btn-primary btn-lg" role="button" id="target">New quote <span class="glyphicon glyphicon-pencil"></span></a></p>
+     </div>
+
+    <script type="text/javascript">
+      var quotes = [
+
+          '“The Way Get Started Is To Quit Talking And Begin Doing.” -Walt Disney',
+          '“The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.” -Winston Churchill',
+          '“Don’t Let Yesterday Take Up Too Much Of Today.” -Will Rogers',
+          '“You Learn More From Failure Than From Success. Don’t Let It Stop You. Failure Builds Character.”- Unknown',
+          '“It’s Not Whether You Get Knocked Down, It’s Whether You Get Up.” – Inspirational Quote By Vince Lombardi',
+          '“If You Are Working On Something That You Really Care About, You Don’t Have To Be Pushed. The Vision Pulls You.”- Steve Jobs',
+          '“People Who Are Crazy Enough To Think They Can Change The World, Are The Ones Who Do.”- Rob Siltanen',
+          '“Failure Will Never Overtake Me If My Determination To Succeed Is Strong Enough.”- Og Mandino',
+          '“We May Encounter Many Defeats But We Must Not Be Defeated.”- Maya Angelou',
+          '“Knowing Is Not Enough; We Must Apply. Wishing Is Not Enough; We Must Do.”- Johann Wolfgang Von Goethe',
+          '“Imagine Your Life Is Perfect In Every Respect; What Would It Look Like?”- Brian Tracy',
+          '“We Generate Fears While We Sit. We Overcome Them By Action.”- Dr. Henry Link'
+      ]
+
+      var images = [
+          'img/img-1.jpg',
+          'img/img-2.jpg',
+          'img/img-3.jpg',
+          'img/img-4.jpg',
+          'img/img-5.jpg',
+          'img/img-6.jpg',
+          'img/img-7.jpg'
+      ]
+
+      var target = document.getElementById('target');
+      target.addEventListener('click', newQuote);
+       target.addEventListener('click', changeBackground);
+
+    function newQuote() {
+      var randNumber = Math.floor(Math.random() * quotes.length);
+      document.getElementById('random').innerHTML = quotes[randNumber];
+    }
+
+    function changeBackground() {
+      var randImage = Math.floor(Math.random() * images.length);
+      document.querySelector('.container').style.background = images[randImage];
+    }
+
+    </script>
+   </body>
+   </html>
